@@ -2,7 +2,7 @@
  * @Author: jerrry23 dixiqi@163.com
  * @Date: 2022-06-13 23:08:38
  * @LastEditors: jerrry23 dixiqi@163.com
- * @LastEditTime: 2022-06-15 10:49:22
+ * @LastEditTime: 2022-06-15 21:39:10
  * @FilePath: \1.reactivity\packages\reactivity\src\reactive.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -41,7 +41,7 @@ export function reactive(target){
         get(target,key,receiver){
             console.log('这里可以记录这个属性使用了哪个effect')
             if(key === ReactiveFlags.IS_REACTIVE) {  // 代理过 返回 TRUE  ==>   target[ReactiveFlags.IS_REACTIVE]  ==> 返回 target  
-                return  true 
+                return  target 
             }
             //track[target,key];
             // 关联 key  与effect
